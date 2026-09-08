@@ -1,0 +1,25 @@
+input:
+  type: synthetic_force_emg
+  duration_s: 30
+  fs: 1000
+
+qc:
+  max_nan_fraction: 0.001
+  flat_std_threshold: 1.0e-10
+
+analysis:
+  force_channel: Force
+  emg_channel: TA_EMG
+  force_target: 10.0
+  force_lowpass_hz: 20
+  emg_bandpass_hz: [20, 450]
+  emg_envelope_hz: 6
+  psd_bands:
+    - [0.0, 0.5]
+    - [0.5, 1.0]
+    - [1.0, 1.5]
+    - [1.5, 2.0]
+    - [2.0, 10.0]
+
+output:
+  directory: demo_output

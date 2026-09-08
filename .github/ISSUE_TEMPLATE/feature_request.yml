@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a new signal type, analysis, importer, workflow, or research feature.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Import / export adapter
+        - Acquisition / hardware
+        - QC
+        - EMG
+        - Force / torque
+        - IMU / movement
+        - Respiration
+        - Audio / voice / cough
+        - Spectral / coupling analysis
+        - Statistics / cohort workflow
+        - GUI / usability
+        - Reporting / reproducibility
+        - Plugin SDK
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Research problem
+      description: What real laboratory or analysis problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe inputs, expected outputs, units, assumptions, and workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation or references
+      description: If this changes scientific results, include formulas, papers, reference software, or a proposed validation strategy.

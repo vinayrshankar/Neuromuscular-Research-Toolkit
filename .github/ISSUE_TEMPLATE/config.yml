@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: NMRT support and usage questions
+    url: https://github.com/vinayrshankar/Neuromuscular-Research-Toolkit/discussions
+    about: Use GitHub Discussions for general usage, study-design integration, and non-bug questions when Discussions are enabled.

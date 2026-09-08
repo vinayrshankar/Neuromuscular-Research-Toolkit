@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuromuscular-research-toolkit"
+version = "0.1.0"
+description = "Device-agnostic toolkit for neuromuscular research data, QC, preprocessing, analysis, and reproducible reporting."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Vinay Shankar", email = "vinay@tfaworld.org"}]
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "scipy>=1.11",
+  "matplotlib>=3.8",
+  "PyYAML>=6.0"
+]
+
+[project.optional-dependencies]
+mat = ["h5py>=3.10"]
+nwb = ["pynwb>=3.0"]
+c3d = ["ezc3d>=1.5"]
+spike2 = ["neo>=0.14"]
+dev = ["pytest>=8", "ruff>=0.6"]
+all = ["h5py>=3.10", "pynwb>=3.0", "ezc3d>=1.5", "neo>=0.14"]
+
+[project.scripts]
+nmrt = "nmrt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
