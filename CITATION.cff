@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software in research, please cite it."
+title: "Neuromuscular Research Toolkit"
+type: software
+version: 0.1.0
+date-released: 2026-09-07
+authors:
+  - family-names: Shankar
+    given-names: Vinay
+email: vinay@tfaworld.org
+url: https://tfaworld.org/
+license: MIT
+repository-code: https://github.com/vinayrshankar/Neuromuscular-Research-Toolkit
