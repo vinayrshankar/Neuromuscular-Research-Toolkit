@@ -3,6 +3,7 @@ from __future__ import annotations
 import numpy as np
 
 from nmrt.analysis.variability import approximate_entropy, coefficient_of_variation
+
 from .common import butter_lowpass
 
 

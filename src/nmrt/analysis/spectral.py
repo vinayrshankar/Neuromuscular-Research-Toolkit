@@ -9,7 +9,7 @@ from scipy import signal
 def welch_psd(x: np.ndarray, fs: float, nperseg: int | None = None) -> tuple[np.ndarray, np.ndarray]:
     x = np.asarray(x, dtype=float)
     if nperseg is None:
-        nperseg = min(len(x), max(256, int(round(fs * 4))))
+        nperseg = min(len(x), max(256, round(fs * 4)))
     return signal.welch(x, fs=fs, nperseg=nperseg, detrend="constant")
 
 
@@ -36,5 +36,5 @@ def coherence(x: np.ndarray, y: np.ndarray, fs: float, nperseg: int | None = Non
     y = np.asarray(y, dtype=float)
     n = min(len(x), len(y))
     if nperseg is None:
-        nperseg = min(n, max(256, int(round(fs * 4))))
+        nperseg = min(n, max(256, round(fs * 4)))
     return signal.coherence(x[:n], y[:n], fs=fs, nperseg=nperseg)

@@ -47,7 +47,7 @@ class Signal:
         return self.start_time_s + np.arange(self.n_samples) / self.fs
 
     def derived(self, data: np.ndarray, *, name: str | None = None, unit: str | None = None,
-                signal_type: str | None = None, metadata: dict[str, Any] | None = None) -> "Signal":
+                signal_type: str | None = None, metadata: dict[str, Any] | None = None) -> Signal:
         merged = dict(self.metadata)
         if metadata:
             merged.update(metadata)

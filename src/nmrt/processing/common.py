@@ -34,6 +34,6 @@ def notch(x: np.ndarray, fs: float, freq_hz: float = 60.0, q: float = 30.0) -> n
 
 def moving_rms(x: np.ndarray, fs: float, window_ms: float = 100.0) -> np.ndarray:
     x = np.asarray(x, dtype=float)
-    n = max(1, int(round(window_ms / 1000 * fs)))
+    n = max(1, round(window_ms / 1000 * fs))
     kernel = np.ones(n) / n
     return np.sqrt(np.convolve(x * x, kernel, mode="same"))
